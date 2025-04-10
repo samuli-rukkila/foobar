@@ -51,3 +51,10 @@ body {
     color: var(--sso-font-color);
 }
 
+.widgetContainer {
+    border-radius: var(--sso-border-radius-round);
+    border: 1px solid var(--sso-border-color);
+    background-color: var(--sso-bg-color);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 20px 32px;
+}
