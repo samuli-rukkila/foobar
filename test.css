@@ -47,7 +47,7 @@ body {
     font-family: "Manrope", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--sso-bg-color);
+    background: none !Important;
     color: var(--sso-font-color);
 }
 
