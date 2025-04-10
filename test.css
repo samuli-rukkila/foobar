@@ -1,8 +1,201 @@
 
-html {
+/* html {
   /* The linear-gradient adds a semi-transparent black overlay over the background image */
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-              url('https://idp.admicom.com/resources/epct9/login/admicom/img/admicom_background.svg')
-              no-repeat center center fixed;
-  background-size: cover;
+/*   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), */
+/*               url('https://idp.admicom.com/resources/epct9/login/admicom/img/admicom_background.svg') */
+/*               no-repeat center center fixed; */
+/*   background-size: cover; */
+/* } */
+
+/* eid-easy-custom.css */
+
+/* Tyylimuuttujat */
+:root {
+    --sso-primary-color: #181818;
+    --sso-secondary-color: #354243;
+    --sso-secondary-color-hover: #2B3A3B;
+    --sso-primary-button-color-hover: #EEEEEE;
+    --sso-border-color: #27272A;
+    --sso-border-secondary-color: #505255;
+    --sso-secondary-border-hover: #EEEEEE;
+    --sso-font-color: #FAFAFA;
+    --sso-font-secondary-color: #838383;
+    --sso-bg-color: #09090B;
+    --sso-link-button-hover-color: #6e6ef6;
+    --sso-accent-color: #FFB700;
+    --sso-accent-color-hover: #E0A100;
+    --sso-dark-gray: #3C4B4C;
+    --sso-button-bg-color: #FFFFFF;
+    --sso-info-color: #1C46D6;
+    --sso-success-color: #0A7637;
+    --sso-warn-color: #ff535c;
+    --sso-error-color: #CA150C;
+    --sso-input-color: #191919;
+    --sso-input-border-color: #3F3F46;
+    --sso-input-border-color-active: rgba(238, 238, 238, 1);
+    --sso-border-radius-sharp: 4px;
+    --sso-border-radius-round: 8px;
+    --sso-font-size: 0.875rem;
+    --sso-heading-font-size: 1.5rem;
+    --sso-header-height: 2.5rem;
+    --sso-dropdown-width: 7rem;
+    --sso-dropdown-y: calc(var(--sso-header-height) + 20px);
+    --sso-dropdown-x: calc(100% - var(--sso-dropdown-width) - 20px);
+    --sso-locale-bg-color: #18181B;
+}
+
+/* Global reset ja typografia */
+body {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--sso-bg-color);
+    color: var(--sso-font-color);
+}
+
+/* Konttien ulkoasu */
+.container-fluid,
+.widgetContainer {
+    background-color: var(--sso-bg-color);
+    border: 1px solid var(--sso-border-color);
+    border-radius: var(--sso-border-radius-round);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px; /* Säädä tarvittaessa */
+}
+
+/* Nappien tyylit */
+button,
+.btn {
+    font-size: var(--sso-font-size);
+    color: var(--sso-primary-color);
+    background-color: var(--sso-accent-color);
+    border: 1px solid var(--sso-accent-color);
+    border-radius: var(--sso-border-radius-sharp);
+    padding: 8px 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+button:hover,
+.btn:hover {
+    background-color: var(--sso-accent-color-hover);
+    border-color: var(--sso-accent-color-hover);
+}
+
+/* Syötekenttien ja valikoiden tyylit */
+input[type="text"],
+input[type="password"],
+select,
+.inlineSelector_select {
+    font-size: var(--sso-font-size);
+    color: var(--sso-font-color);
+    background-color: var(--sso-input-color);
+    border: 1px solid var(--sso-input-border-color);
+    border-radius: var(--sso-border-radius-sharp);
+    padding: 0.375rem 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus,
+.inlineSelector_select:focus {
+    outline: none;
+    border: 1px solid var(--sso-input-border-color-active);
+    box-shadow: 0 0 0 0.25rem rgba(238, 238, 238, 0.25);
+}
+
+/* Linkkien ulkoasu */
+a {
+    color: var(--sso-accent-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--sso-link-button-hover-color);
+}
+
+/* Hälytysten (alert) tyylit */
+.alert {
+    padding: 16px;
+    margin-bottom: 1rem;
+    border-radius: var(--sso-border-radius-sharp);
+    color: var(--sso-font-color);
+}
+
+.alert-danger {
+    background-color: var(--sso-error-color);
+}
+
+.alert-success {
+    background-color: var(--sso-success-color);
+}
+
+.alert-info {
+    background-color: var(--sso-info-color);
+}
+
+.alert-warning {
+    background-color: var(--sso-warn-color);
+}
+
+/* Kielenvalitsimen tyylit */
+.inlineSelector {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.inlineSelector label {
+    margin-right: 8px;
+}
+
+.inlineSelector_select {
+    display: block;
+    width: 100%;
+    min-width: 120px;
+    max-width: 150px;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    font-size: 16px;
+    color: var(--sso-font-color);
+    background-color: var(--sso-input-color);
+    border: 1px solid var(--sso-input-border-color);
+    border-radius: var(--sso-border-radius-sharp);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23FAFAFA' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+}
+
+/* Spinnerin perusasetukset */
+#spinner-front,
+#spinner-back {
+    display: none;
+}
+
+#spinner-front.show,
+#spinner-back.show {
+    display: block;
+}
+
+/* Jos haluat ohittaa kolmannen osapuolen widgetien tyylit */
+.eideasy-widget {
+    border: none;
+    background-color: var(--sso-bg-color);
+    color: var(--sso-font-color);
+}
+
+/* Mahdolliset muut säätökohtaiset lisäykset */
+a#kc-current-locale-link::after {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 5px;
+    background: url("../img/dropdown.svg") no-repeat center center;
+    background-size: contain;
 }
