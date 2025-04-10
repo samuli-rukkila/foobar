@@ -52,6 +52,18 @@ body {
     color: var(--sso-font-color);
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 10px;  /* adjust spacing as needed */
+    left: 10px; /* adjust spacing as needed */
+    width: 150px;  /* change to your logo's width */
+    height: 50px;  /* change to your logo's height */
+    background: url('https://idp.admicom.com/resources/epct9/login/admicom/img/admicom.svg') no-repeat center;
+    background-size: contain;
+    z-index: 9999; /* ensures the logo is on top */
+}
+
 .widgetContainer {
     border-radius: var(--sso-border-radius-round);
     border: 1px solid var(--sso-border-color);
