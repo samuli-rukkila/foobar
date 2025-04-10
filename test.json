@@ -1,0 +1,9 @@
+{
+  body {
+    /* The linear-gradient adds a semi-transparent black overlay over the background image */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://idp.admicom.com/resources/epct9/login/admicom/img/admicom_background.svg')
+                no-repeat center center fixed;
+    background-size: cover;
+  }
+}
