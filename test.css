@@ -35,11 +35,12 @@
 }
 
 html {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-              url('https://idp.admicom.com/resources/epct9/login/admicom/img/admicom_background.svg')
-              no-repeat center center fixed;
-  background-size: cover;
-  background-color: #09090B;
+    min-height: 100vh;
+    background-color: #09090B;
+    background-image: url('https://idp.admicom.com/resources/epct9/login/admicom/img/admicom_background.svg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right;
 }
 
 
